@@ -12,6 +12,7 @@ use Composer\Plugin\PluginInterface;
 use Composer\Script\Event;
 use Composer\Script\ScriptEvents;
 use Composer\Util\Filesystem;
+use Symfony\Component\Process\ExecutableFinder;
 use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Process\Process;
 
@@ -254,6 +255,10 @@ class DevScaffoldInstallerPlugin implements PluginInterface, EventSubscriberInte
         if (!file_exists('./test/nightwatch')) {
             $fs->ensureDirectoryExists('./test/nightwatch');
             $this->installScaffoldFile('example.nightwatch.js', 'test/nightwatch/example.nightwatch.js');
+        }
+
+        if (!(new ExecutableFinder())->find('yarn')) {
+            throw new \RuntimeException('yarn could not be found. Install it with npm -g install yarn.');
         }
 
         // Create a new yarn project if package.json doesn't exist
