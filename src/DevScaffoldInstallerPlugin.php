@@ -280,7 +280,7 @@ class DevScaffoldInstallerPlugin implements PluginInterface, EventSubscriberInte
                 }
             });
             // Override the package.json name field as yarn will have used the
-            //folder name, which is just "html" in DDEV.
+            // folder name, which is just "html" in DDEV.
             if ($this->environment === 'ddev' && !empty(getenv('DDEV_PROJECT'))) {
                 $packageJsonContents = file_get_contents('./package.json');
                 $packageJsonContents = str_replace('html', getenv('DDEV_PROJECT'), $packageJsonContents);
