@@ -257,10 +257,6 @@ class DevScaffoldInstallerPlugin implements PluginInterface, EventSubscriberInte
             $this->installScaffoldFile('example.nightwatch.js', 'test/nightwatch/example.nightwatch.js');
         }
 
-        if (!(new ExecutableFinder())->find('yarn')) {
-            throw new \RuntimeException('yarn could not be found. Install it with npm -g install yarn.');
-        }
-
         // Create a new yarn project if package.json doesn't exist
         if (!file_exists('./package.json')) {
             $yarn = new Process(['yarn', 'set', 'version', 'berry']);
@@ -309,6 +305,10 @@ class DevScaffoldInstallerPlugin implements PluginInterface, EventSubscriberInte
 
         if (!empty($needToInstall)) {
             if (file_exists('yarn.lock')) {
+                if (!(new ExecutableFinder())->find('yarn')) {
+                    throw new \RuntimeException('yarn could not be found. Install it with npm -g install yarn.');
+                }
+
                 $this->userCommands[] = sprintf('yarn add %s --dev', implode(' ', array_values($dependencies)));
                 if ($this->environment === 'ddev') {
                     $this->userCommands[] = 'ddev exec yarn';
