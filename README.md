@@ -6,6 +6,17 @@ This is a composer package containing the testing helpers for Drainpipe i.e.
 should be included in `require-dev` and not installed in production
 environments.
 
+## One-time setup
+
+Add the "test" tasks to your `Taskfile.yml` _as optional_ (since this package is require-dev, it won't be present in production):
+```yaml
+includes:
+  # ...other includes
+  test:
+    taskfile: ./vendor/lullabot/drainpipe-dev/tasks/test.yml
+    optional: true
+```
+
 ## Usage
 
 ### `test:static`
