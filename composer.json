@@ -23,7 +23,7 @@
         "mglaman/phpstan-drupal": "^1.0.3",
         "symfony/yaml": "^4",
         "drupal/coder": "^8.3",
-        "friends-of-behat/mink-browserkit-driver": "^1.",
+        "friends-of-behat/mink-browserkit-driver": "^1.6",
         "tijsverkoyen/convert-to-junit-xml": "^1.9",
         "phpstan/phpstan-deprecation-rules": "^1.0.0",
         "phpspec/prophecy-phpunit": "^2"
