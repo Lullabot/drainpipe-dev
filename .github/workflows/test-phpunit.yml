@@ -47,7 +47,7 @@ jobs:
           ddev composer config repositories.drainpipe-dev --json "{\"type\": \"path\", \"url\": \"drainpipe-dev\", \"options\": {\"symlink\": false}}"
           ddev composer config minimum-stability dev
           ddev composer require lullabot/drainpipe --with-all-dependencies
-          ddev composer require lullabot/drainpipe-dev --dev --with-all-dependencies
+          ddev composer require lullabot/drainpipe-dev mikey179/vfsstream --dev --with-all-dependencies
           # Restart is required to enable the provided Selenium containers
           ddev restart
 
