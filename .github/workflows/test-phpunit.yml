@@ -102,7 +102,7 @@ jobs:
           git-name: Drainpipe Bot
           git-email: no-reply@example.com
 
-      - name: Build Project
+      - name: Setup Project
         run: |
           ddev config --auto
           ddev start
@@ -119,16 +119,19 @@ jobs:
           ddev composer require lullabot/drainpipe-dev weitzman/drupal-test-traits behat/mink-selenium2-driver mikey179/vfsstream --dev --with-all-dependencies
           # Restart is required to enable the provided Selenium containers
           ddev restart
+
+      - name: Add Custom Testing Module
+        run: |
           mkdir web/modules/custom
           cp -R drainpipe-dev/tests/fixtures/phpunit/testmodule web/modules/custom/
           cp drainpipe-dev/tests/fixtures/phpunit/Taskfile-testtraits.yml Taskfile.yml
 
-      #- name: Run PHPUnit Functional Tests
-      #  run: |
-      #    cd ../drupal
-      #    ddev drush site:install -y
-      #    ddev drush user:password admin password
-      #    ddev task test:phpunit:functional format=junit
+      - name: Run PHPUnit Functional Tests
+        run: |
+          cd ../drupal
+          ddev drush site:install -y
+          ddev drush user:password admin password
+          ddev task test:phpunit:functional format=junit
 
       #- name: Move Test Results Into The Workspace
       #  run: |
