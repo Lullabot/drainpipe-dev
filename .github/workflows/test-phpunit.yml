@@ -151,7 +151,7 @@ jobs:
 
       - name: Setup Project
         run: |
-          ddev config --auto --php-version=8.1
+          ddev config --auto
           ddev start
           ddev composer config extra.drupal-scaffold.gitignore true
           ddev composer config --json extra.drupal-scaffold.allowed-packages \[\"lullabot/drainpipe-dev\",\"lullabot/drainpipe\",\"weitzman/drupal-test-traits\"]
@@ -163,7 +163,7 @@ jobs:
           ddev composer config repositories.drainpipe-dev --json "{\"type\": \"path\", \"url\": \"drainpipe-dev\", \"options\": {\"symlink\": false}}"
           ddev composer config minimum-stability dev
           ddev composer require lullabot/drainpipe --with-all-dependencies
-          ddev composer require lullabot/drainpipe-dev weitzman/drupal-test-traits:^2.0.0-rc1 behat/mink-selenium2-driver mikey179/vfsstream --dev --with-all-dependencies
+          ddev composer require lullabot/drainpipe-dev weitzman/drupal-test-traits behat/mink-selenium2-driver mikey179/vfsstream --dev --with-all-dependencies
           # Restart is required to enable the provided Selenium containers
           ddev restart
 
