@@ -19,7 +19,7 @@ vars:
 tasks:
   static:
     desc: Runs all static tests
-    deps: [security, lint, phpstan, phpunit:static, phpcs, lint:github-actions]
+    deps: [security, lint, phpstan, phpunit:static, phpcs]
   functional:
     desc: Runs all tests that require a bootstrapped Drupal site
     deps: [config, phpunit:functional, nightwatch]
@@ -46,6 +46,7 @@ tasks:
       - ./vendor/bin/drush pm:security
   lint:
     desc: Runs lint on composer, YAML, and Twig files
+    deps: [lint:github-actions]
     # @todo JUnit output
     cmds:
       - composer validate
