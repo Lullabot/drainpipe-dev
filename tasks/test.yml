@@ -85,11 +85,6 @@ tasks:
       - |
         PACKAGES="@action-validator/core @action-validator/cli"
         npm install -g $PACKAGES --save-dev
-  lint:github-actions:test:
-    desc: Run lint on github-actions to ensure they are valid.
-    cmds:
-      - |
-        find .github/workflows .github/actions -type f \( -iname '*.yaml' -o -iname '*.yml' \)
   lint:github-actions:
     desc: Run lint on github-actions to ensure they are valid.
     deps: [lint:github-actions:setup]
