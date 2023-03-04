@@ -2,3 +2,4 @@ version: '3'
 
 includes:
   test: ./vendor/lullabot/drainpipe-dev/tasks/test.yml
+  github: ./vendor/lullabot/drainpipe-dev/tasks/github.yml

@@ -46,7 +46,6 @@ tasks:
       - ./vendor/bin/drush pm:security
   lint:
     desc: Runs lint on composer, YAML, and Twig files
-    deps: [lint:github-actions]
     # @todo JUnit output
     cmds:
       - composer validate
@@ -78,20 +77,6 @@ tasks:
         elif [ -f ".eslintrc.json" ] && [ -f "package-lock.json" ]; then
           npm run eslint .
         fi
-  lint:github-actions:setup:
-    desc: Installs action-validator for linting github-actions.
-    interactive: true
-    cmds:
-      - |
-        PACKAGES="@action-validator/core @action-validator/cli"
-        npm install -g $PACKAGES --save-dev
-  lint:github-actions:
-    desc: Run lint on github-actions to ensure they are valid.
-    deps: [lint:github-actions:setup]
-    cmds:
-      - |
-        find .github/workflows .github/actions -type f \( -iname '*.yaml' -o -iname '*.yml' \) \
-          | xargs -n1 action-validator
   config:
     desc: "Verifies that exported config matches the config in Drupal. Run with format=short to skip showing the full table of diffs."
     # @todo JUnit output

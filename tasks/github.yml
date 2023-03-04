@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  actions:lint:setup:
+    desc: Installs action-validator for linting github-actions.
+    cmds:
+      - |
+        PACKAGES="@action-validator/core @action-validator/cli"
+        npm install -g $PACKAGES --save-dev
+  actions:lint:
+    desc: Run lint on github-actions to ensure they are valid.
+    deps: [actions:lint:setup]
+    cmds:
+      - |
+        find .github/workflows .github/actions -type f \( -iname '*.yaml' -o -iname '*.yml' \) \
+          | xargs -n1 action-validator
