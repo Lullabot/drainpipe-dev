@@ -1,4 +1,4 @@
-name: Test Static Tests
+name: Test Github Lint
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  Test-Github-Tests:
+  Test-Github-Lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
