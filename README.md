@@ -1,3 +1,2 @@
-# Drainpipe Dev
-
-This package holds the dev dependencies and related tasks for https://github.com/lullabot/drainpipe.
+This package is automatically split from https://github.com/lullabot/drainpipe
+to hold dev dependencies in composer.

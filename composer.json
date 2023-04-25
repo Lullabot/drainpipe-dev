@@ -20,7 +20,7 @@
         "mockery/mockery": "^1.4",
         "behat/mink": "^1.8",
         "symfony/phpunit-bridge": "^5.3",
-        "lullabot/drainpipe": "^1.0",
+        "lullabot/drainpipe": "*",
         "mglaman/phpstan-drupal": "^1.0.3",
         "symfony/yaml": "^4|^5|^6",
         "drupal/coder": "^8.3",
@@ -48,9 +48,7 @@
                 "[web-root]/sites/firefox/settings.php": "scaffold/nightwatch/firefox.settings.php",
                 "[web-root]/sites/sites.php": "scaffold/nightwatch/sites.php",
                 "[project-root]/.ddev/docker-compose.selenium.yaml": "scaffold/nightwatch/docker-compose.selenium.yaml",
-                "[project-root]/test/nightwatch/example.nightwatch.js": "scaffold/nightwatch/example.nightwatch.js",
-                "[project-root]/phpstan.neon": "scaffold/phpstan.neon",
-                "[project-root]/phpcs.xml": "scaffold/phpcs.xml"
+                "[project-root]/test/nightwatch/example.nightwatch.js": "scaffold/nightwatch/example.nightwatch.js"
             }
         }
     },
@@ -62,3 +60,4 @@
         }
     }
 }
+
