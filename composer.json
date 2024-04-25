@@ -32,6 +32,7 @@
         "composer/composer": "^2.7.2"
     },
     "bin": [
+        "bin/storybook-twig-linter",
         "bin/drainpipe-twig-linter",
         "bin/drainpipe-convert-to-junit-xml"
     ],
