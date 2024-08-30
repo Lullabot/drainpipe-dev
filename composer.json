@@ -19,13 +19,13 @@
         "drupal/coder": "^8.3.24",
         "lullabot/drainpipe": "*",
         "mglaman/phpstan-drupal": "^1.2.12",
-        "mikey179/vfsstream": "^1.6.11",
+        "mikey179/vfsstream": "^1.6.12",
         "mockery/mockery": "^1.6.12",
         "phpspec/prophecy-phpunit": "^2",
         "phpstan/phpstan-deprecation-rules": "^1.2.0",
         "phpunit/phpunit": "^9|^10",
-        "symfony/phpunit-bridge": "6.4.10",
-        "symfony/yaml": "6.4.8",
+        "symfony/phpunit-bridge": "6.4.11",
+        "symfony/yaml": "6.4.11",
         "tijsverkoyen/convert-to-junit-xml": "^1.11.0",
         "vincentlanglet/twig-cs-fixer": "^3.0.2"
     },
@@ -33,7 +33,6 @@
         "composer/composer": "^2.7.8"
     },
     "bin": [
-        "bin/drainpipe-twig-linter",
         "bin/drainpipe-convert-to-junit-xml"
     ],
     "extra": {
@@ -49,6 +48,7 @@
                 "[web-root]/sites/sites.php": "scaffold/nightwatch/sites.php",
                 "[project-root]/.ddev/docker-compose.selenium.yaml": "scaffold/nightwatch/docker-compose.selenium.yaml",
                 "[project-root]/test/nightwatch/example.nightwatch.js": "scaffold/nightwatch/example.nightwatch.js",
+                "[project-root]/test/nightwatch/vrt/.gitignore": "scaffold/nightwatch/vrt.gitignore",
                 "[project-root]/phpcs.xml.dist": "scaffold/phpcs.xml.dist",
                 "[project-root]/phpstan.neon.dist": "scaffold/phpstan.neon.dist",
                 "[project-root]/.twig-cs-fixer.dist.php": "scaffold/.twig-cs-fixer.dist.php"
