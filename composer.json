@@ -22,7 +22,7 @@
         "mikey179/vfsstream": "^1.6.12",
         "mockery/mockery": "^1.6.12",
         "phpspec/prophecy-phpunit": "^2",
-        "phpstan/phpstan-deprecation-rules": "^1|^2",
+        "phpstan/phpstan-deprecation-rules": "2.0.3",
         "phpunit/phpunit": "^9|^10|^11",
         "symfony/phpunit-bridge": "^6",
         "symfony/yaml": "^6|^7",
